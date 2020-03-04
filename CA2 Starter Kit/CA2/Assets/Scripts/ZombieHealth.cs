@@ -16,9 +16,9 @@ public class ZombieHealth : HealthComponent
 
     public override void KillCharacter()
     {
-        
         manager.RecordZombieDeath();
-        Instantiate(splatter);
+        Instantiate(splatter,transform.position,Quaternion.identity);
+
         base.KillCharacter();
     }
 }

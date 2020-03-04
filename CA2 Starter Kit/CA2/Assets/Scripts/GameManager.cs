@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public void RecordZombieDeath() //method to call when killing a zombie
     {
-        numberOfZombies = numberOfZombies - 1; // subtract from total number of zombies
+        numberOfZombies--; // subtract from total number of zombies
         if(numberOfZombies <= 0)
         {
             SceneManager.LoadScene("GameComplete");

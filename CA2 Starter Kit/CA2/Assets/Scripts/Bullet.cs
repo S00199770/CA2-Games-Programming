@@ -5,11 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed = 2;
-    public int damage = Random.Range(25, 75); //random damage
+    public int damage; 
 
     private void Start()
     {
         Invoke("DestroyBullet", 2);
+        damage = Random.Range(25, 75); //random damage
     }
 
     //sets the velocity of the bullet
@@ -21,12 +22,14 @@ public class Bullet : MonoBehaviour
     //can be extended by later (virtual)
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
+        ApplyDamagetoHealth(collision.gameObject);
         DestroyBullet();
     }
 
     //can be extended by later (virtual)
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
+        ApplyDamagetoHealth(collision.gameObject);
         DestroyBullet();
     }
 
@@ -37,18 +40,10 @@ public class Bullet : MonoBehaviour
     void ApplyDamagetoHealth(GameObject entityStruck)
     {
         HealthComponent entityHealthComponent = entityStruck.GetComponent<HealthComponent>(); // Storing the HealthComponent script into entityHealthComponent
-        if(entityHealthComponent)
+        if(entityHealthComponent) //if != null
         {
             entityHealthComponent.ApplyDamage(damage);
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        ApplyDamagetoHealth(collision.gameObject);
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        ApplyDamagetoHealth(other.gameObject);
     }
 
 }

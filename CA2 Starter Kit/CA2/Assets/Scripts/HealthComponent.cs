@@ -8,10 +8,15 @@ public class HealthComponent : MonoBehaviour
 
     public void ApplyDamage(int amount)
     {
-        Health -= amount;
+        if (Health > 0)
+        {
+            Health -= amount;
 
-        if (Health <= 0)
-            KillCharacter();
+            if (Health <= 0)
+            {
+                KillCharacter();
+            }
+        }
     }
 
     public virtual void KillCharacter()
