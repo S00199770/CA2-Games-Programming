@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float Speed = 2;
+    public int damage = Random.Range(25, 75); //random damage
 
     private void Start()
     {
@@ -32,6 +33,22 @@ public class Bullet : MonoBehaviour
     void DestroyBullet()
     {
         Destroy(gameObject);
+    }
+    void ApplyDamagetoHealth(GameObject entityStruck)
+    {
+        HealthComponent entityHealthComponent = entityStruck.GetComponent<HealthComponent>(); // Storing the HealthComponent script into entityHealthComponent
+        if(entityHealthComponent)
+        {
+            entityHealthComponent.ApplyDamage(damage);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        ApplyDamagetoHealth(collision.gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        ApplyDamagetoHealth(other.gameObject);
     }
 
 }
