@@ -6,13 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : HealthComponent
 {
-
+    
 
     private void Start()
     {
 
     }
-
+    private void Update()
+    {
+        if(Health <= 0)
+        {
+            KillCharacter();
+        }
+    }
     public override void KillCharacter()
     {
         base.KillCharacter();
@@ -24,6 +30,7 @@ public class PlayerHealth : HealthComponent
         if(collision.gameObject.CompareTag("Zombie"))
         {
             ApplyDamage(10);
+            
         }
     }
 

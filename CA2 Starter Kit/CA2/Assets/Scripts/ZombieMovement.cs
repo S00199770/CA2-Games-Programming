@@ -21,12 +21,18 @@ public class ZombieMovement : MonoBehaviour
         //RotateTowards();
         //MoveTowardsPlayer();
 
-        Vector3 direction = player.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        zombie.rotation = angle;
-        direction.Normalize();
-        movement = direction;
-        
+
+        if (player) //only run if the player is alive
+        {
+            Vector3 direction = player.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            zombie.rotation = angle;
+            direction.Normalize();
+            movement = direction;
+
+
+        }
+
 
 
     }

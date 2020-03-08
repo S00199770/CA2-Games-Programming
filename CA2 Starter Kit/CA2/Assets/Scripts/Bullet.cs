@@ -22,18 +22,18 @@ public class Bullet : MonoBehaviour
     //can be extended by later (virtual)
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        ApplyDamagetoHealth(collision.gameObject);
+        ApplyDamagetoHealth(collision.gameObject); //on trigger, apply damage to the gameobject the bullet collides with
         DestroyBullet();
     }
 
     //can be extended by later (virtual)
     public virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        ApplyDamagetoHealth(collision.gameObject);
+        ApplyDamagetoHealth(collision.gameObject); //on collision, apply damage to the gameobject the bullet collides with
         DestroyBullet();
     }
 
-    void DestroyBullet()
+    void DestroyBullet() //destroys bullet
     {
         Destroy(gameObject);
     }
@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
         HealthComponent entityHealthComponent = entityStruck.GetComponent<HealthComponent>(); // Storing the HealthComponent script into entityHealthComponent
         if(entityHealthComponent) //if != null
         {
-            entityHealthComponent.ApplyDamage(damage);
+            entityHealthComponent.ApplyDamage(damage); //apply damage using random number to the entity struck
         }
     }
 

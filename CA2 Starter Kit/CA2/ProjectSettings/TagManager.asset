@@ -9,6 +9,8 @@ TagManager:
   - Roof
   - Vehicle
   - Zombie
+  - HealthText
+  - NoOfZombies
   layers:
   - Default
   - TransparentFX
