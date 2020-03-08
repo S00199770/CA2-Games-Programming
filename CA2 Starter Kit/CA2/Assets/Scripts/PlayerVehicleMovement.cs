@@ -9,6 +9,7 @@ public class PlayerVehicleMovement : MonoBehaviour
 
     public float rotationSpeed = 2;//speed which teh car will turn at
     float h, v;
+   
 
     Rigidbody2D body;
 
@@ -16,6 +17,7 @@ public class PlayerVehicleMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         currentSpeed = movementSpeed;
+        
     }
 
     void Update()
@@ -40,4 +42,6 @@ public class PlayerVehicleMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
     }
+    
+
 }

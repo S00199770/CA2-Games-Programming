@@ -166,3 +166,6 @@ C:\Users\ngannon\Desktop\Introduction to Games Programming 2020\CA2 Starter Kit\
 C:\Users\ngannon\Desktop\Introduction to Games Programming 2020\CA2 Starter Kit\CA2\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\ngannon\Desktop\Introduction to Games Programming 2020\CA2 Starter Kit\CA2\obj\Debug\Assembly-CSharp.dll
 C:\Users\ngannon\Desktop\Introduction to Games Programming 2020\CA2 Starter Kit\CA2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Desktop\Desktop\Main\Development & Coding\C#\CA2-Games-Programming\CA2 Starter Kit\CA2\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Desktop\Desktop\Main\Development & Coding\C#\CA2-Games-Programming\CA2 Starter Kit\CA2\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+C:\Users\Desktop\Desktop\Main\Development & Coding\C#\CA2-Games-Programming\CA2 Starter Kit\CA2\obj\Debug\Assembly-CSharp.dll
