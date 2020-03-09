@@ -11,7 +11,7 @@ public class VehicleCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        zombieHealthScript = GameObject.FindGameObjectWithTag("Zombie").GetComponent<ZombieHealth>();
+        zombieHealthScript = collision.gameObject.GetComponent<ZombieHealth>();
         if (collision.gameObject.CompareTag("Zombie"))
         {
             
